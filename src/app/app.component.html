@@ -18,7 +18,10 @@
 </div>
 
 <div>
-  <button type="submit" (click)="onButtonClick()"> +Generate! </button>
+  <button type="submit" 
+  (click)="onButtonClick()" 
+  [disabled]="!(length && (includeLetters ||includeNumbers ||includeSymbols))"
+  > +Generate! </button>
 </div>
 
 <div>
