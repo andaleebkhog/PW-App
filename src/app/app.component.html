@@ -2,19 +2,19 @@
 
 <div>
   <label>Length </label>
-  <input type="number">
+  <input type="text" (input)="onChangeLength($event)">
 </div>
 
 <div>
-  <input type="checkbox"> <label>User Letters</label>
+  <input type="checkbox" (change)="onChangeLetters()"> <label>User Letters</label>
 </div>
 
 <div>
-  <input type="checkbox"> <label>User Numbers</label>
+  <input type="checkbox" (change)="onChangeNumbers()"> <label>User Numbers</label>
 </div>
 
 <div>
-  <input type="checkbox"> <label>User Symbols</label>
+  <input type="checkbox" (change)="onChangeSymbols()"> <label>User Symbols</label>
 </div>
 
 <div>
