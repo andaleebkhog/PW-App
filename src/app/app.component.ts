@@ -15,20 +15,42 @@ export class AppComponent {
   
   //Event-Binding-Syntax
   onButtonClick(){
-    //console.log("button is clicked!");
-    this.password = "This is my password!";
-    // console.log(this.includeLetters);
-    // console.log(this.includeNumbers);
-    // console.log(this.includeSymbols);
+    // //console.log("button is clicked!");
+    // this.password = "This is my password!";
+    // // console.log(this.includeLetters);
+    // // console.log(this.includeNumbers);
+    // // console.log(this.includeSymbols);
 
-    console.log(`
-    About to generate a password with the following:
-    Includes letters: ${this.includeLetters};
-    Includes Numbers: ${this.includeNumbers};
-    Includes Symbols: ${this.includeSymbols};
-    `);
+    // console.log(`
+    // About to generate a password with the following:
+    // Includes letters: ${this.includeLetters};
+    // Includes Numbers: ${this.includeNumbers};
+    // Includes Symbols: ${this.includeSymbols};
+    //`);
     
-    
+    const numbers = '1234567890';
+    const letters = 'abcdefghijlkmnopqrstuvwxyz';
+    const symbols = '~!@#$%^&*()_+';
+
+    let validChars = '';
+    if(this.includeLetters){
+      validChars += letters;
+    }
+    if(this.includeNumbers){
+      validChars += numbers;
+    }
+    if(this.includeSymbols){
+      validChars += symbols;
+    }
+
+    let generatedPassword = '';
+    for(let i=0; i < this.length; i++){
+      const index = Math.floor(Math.random() * validChars.length);
+
+      generatedPassword += validChars[index];
+    }
+
+    this.password = generatedPassword;
     
   }
   //Property-Binding-Syntax
