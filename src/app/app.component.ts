@@ -87,4 +87,11 @@ export class AppComponent {
     console.log(this.length);
     
   }
+
+  onEnabling(){
+    if(this.length == 0 || !this.includeSymbols || !this.includeLetters || !this.includeNumbers){
+      console.log('all disabled');
+      
+    }
+  }
 }
